@@ -2,6 +2,14 @@ pipeline {
    agent any
 
    stages {
+      stage('Checkout') {
+         steps {
+            checkout scmGit(branches: [[name: '*/main']], 
+                            extensions: [], 
+                            userRemoteConfigs: [[url: 'https://github.com/waelgharsalliii/ODDO_Project_Automaion.git']])
+         }
+      }
+
       stage('Build') {
          steps {
             sh 'cd ODDO_Project && mvn -B compile'
@@ -9,17 +17,17 @@ pipeline {
       }
 
       stage('Test') {
-          steps {
-              sh 'cd ODDO_Project && mvn -B clean install'
-              cucumber failedFeaturesNumber: -1, 
-                       failedScenariosNumber: -1, 
-                       failedStepsNumber: -1, 
-                       fileIncludePattern: '**/*.json', 
-                       pendingStepsNumber: -1, 
-                       skippedStepsNumber: -1, 
-                       sortingMethod: 'ALPHABETICAL', 
-                       undefinedStepsNumber: -1
-          }
+         steps {
+            sh 'cd ODDO_Project && mvn -B clean install'
+            cucumber failedFeaturesNumber: -1, 
+                     failedScenariosNumber: -1, 
+                     failedStepsNumber: -1, 
+                     fileIncludePattern: '**/*.json', 
+                     pendingStepsNumber: -1, 
+                     skippedStepsNumber: -1, 
+                     sortingMethod: 'ALPHABETICAL', 
+                     undefinedStepsNumber: -1
+         }
       }
    }
 
