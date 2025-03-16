@@ -1,4 +1,4 @@
-/*package com.exemple.oddoproject.bdd;
+package com.exemple.oddoproject.bdd;
 
 import java.time.Duration;
 import static org.junit.Assert.*;
@@ -177,4 +177,4 @@ public class StepDefinitionQuiSommeNous {
 	
 
 	
-}*/
+}
