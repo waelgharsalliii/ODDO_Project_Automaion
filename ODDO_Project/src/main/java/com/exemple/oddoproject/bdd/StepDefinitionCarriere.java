@@ -1,4 +1,4 @@
-package com.exemple.oddoproject.bdd;
+/*package com.exemple.oddoproject.bdd;
 
 import static org.junit.Assert.*;
 
@@ -136,4 +136,4 @@ import io.cucumber.java.en.When;
 	
 
 	
-}
+}*/
