@@ -4,15 +4,29 @@ pipeline {
    stages {
       stage('Build') {
          steps {
-            sh 'cd ODDO_Project && cd mvn -B compile'
+            sh 'cd ODDO_Project && mvn -B compile'
          }
       }
-      stage('Test'){
-          steps{
-              sh 'cd ODDO_Project && mvn -B clean install'
-              cucumber failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
-              }
-      }
 
+      stage('Test') {
+          steps {
+              sh 'cd ODDO_Project && mvn -B clean install'
+              cucumber failedFeaturesNumber: -1, 
+                       failedScenariosNumber: -1, 
+                       failedStepsNumber: -1, 
+                       fileIncludePattern: '**/*.json', 
+                       pendingStepsNumber: -1, 
+                       skippedStepsNumber: -1, 
+                       sortingMethod: 'ALPHABETICAL', 
+                       undefinedStepsNumber: -1
+          }
+      }
+   }
+
+   post {
+      always {
+         junit '**/target/surefire-reports/*.xml'  // Archive JUnit test results
+         cucumber fileIncludePattern: '**/target/cucumber-reports/*.json'  // Archive Cucumber reports
+      }
    }
 }
