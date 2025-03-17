@@ -16,10 +16,10 @@
     <maven.compiler.source.version>21</maven.compiler.source.version>
     <maven.compiler.target.version>21</maven.compiler.target.version>
     <cucumber.version>7.14.0</cucumber.version>
+    <junit.version>4.13.2</junit.version>
   </properties>
 
   <dependencies>
-
     <!-- Cucumber -->
     <dependency>
       <groupId>io.cucumber</groupId>
@@ -27,24 +27,15 @@
       <version>${cucumber.version}</version>
     </dependency>
     
+    <!-- Cucumber JUnit Integration -->
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-junit</artifactId>
       <version>${cucumber.version}</version>
       <scope>test</scope>
     </dependency>
-    
-    <dependency>
-      <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-junit</artifactId>
-      <version>${cucumber.version}</version>
-     
-    </dependency>
-    
-    
-    
 
-    <!-- Commons-IO (Fixed Duplicate) -->
+    <!-- Commons-IO -->
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
@@ -58,23 +49,20 @@
       <version>5.9.3</version>
     </dependency>
 
-    <!-- JUnit -->
+    <!-- JUnit 4 -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.13.2</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
-         
 
-    
     <!-- Selenium -->
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
       <version>4.0.0</version>
     </dependency>
-
   </dependencies>
 
   <build>
@@ -95,8 +83,14 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${maven.surefire.plugin.version}</version>
+        <configuration>
+          <includes>
+            <include>**/*Test.java</include>
+            <include>**/*Tests.java</include>
+            <include>**/*StepDefinition.java</include>
+          </includes>
+        </configuration>
       </plugin>
     </plugins>
   </build>
-
 </project>
