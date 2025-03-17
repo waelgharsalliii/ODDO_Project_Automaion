@@ -15,7 +15,7 @@
     <maven.surefire.plugin.version>3.2.1</maven.surefire.plugin.version>
     <maven.compiler.source.version>21</maven.compiler.source.version>
     <maven.compiler.target.version>21</maven.compiler.target.version>
-    <cucumber.version>7.14.0</cucumber.version>
+    <cucumber.version>7.13.0</cucumber.version>
     <junit.version>4.13.2</junit.version>
   </properties>
 
@@ -25,6 +25,7 @@
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-java</artifactId>
       <version>${cucumber.version}</version>
+      <scope>test</scope>
     </dependency>
     
     <!-- Cucumber JUnit Integration -->
@@ -40,7 +41,7 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>${junit.version}</version>
-      
+      <scope>test</scope>
     </dependency>
 
     <!-- Selenium -->
@@ -64,6 +65,12 @@
       <version>2.11.0</version>
     </dependency>
   </dependencies>
+      
+   <dependency>
+        <groupId>net.masterthought</groupId>
+        <artifactId>cucumber-reporting</artifactId>
+        <version>5.7.0</version>
+    </dependency>
 
   <build>
     <plugins>
