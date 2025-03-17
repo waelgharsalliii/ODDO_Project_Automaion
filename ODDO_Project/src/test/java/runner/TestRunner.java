@@ -8,11 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
    features = "src/test/resources/AIO_Features",
    glue = "com.exemple.oddoproject.bdd",  // Corrected path
-   plugin = {
-       "pretty",
-       "json:target/cucumber-report.json",  // Ensure JSON report generation
-       "html:target/cucumber-reports.html"
-   }
+   plugin = {"json:target/cucumber.json"}
 )
 public class TestRunner {
 }
