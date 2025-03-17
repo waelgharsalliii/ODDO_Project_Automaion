@@ -6,7 +6,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-   features = "src/test/resources/AIO_Features",   // Path to the feature files
+   features = "src/test/resources/AIO_Features/",   // Path to the feature files
    glue = "bdd",                                   // Path to the step definitions
    plugin = {
        "pretty",
