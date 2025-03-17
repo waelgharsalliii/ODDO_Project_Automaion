@@ -25,7 +25,7 @@
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-java</artifactId>
       <version>${cucumber.version}</version>
-      
+      <scope>test</scope>
     </dependency>
     
     <!-- Cucumber JUnit Integration -->
@@ -33,7 +33,7 @@
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-junit</artifactId>
       <version>${cucumber.version}</version>
-     
+      <scope>test</scope>
     </dependency>
 
     <!-- JUnit 4 -->
@@ -41,7 +41,7 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>${junit.version}</version>
-      
+      <scope>test</scope>
     </dependency>
 
     <!-- Selenium -->
