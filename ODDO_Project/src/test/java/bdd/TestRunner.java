@@ -6,7 +6,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-   features = "src/test/resources",   // Path to feature files
+   features = "src/test/resources/AIO_Features",   // Path to feature files
    glue = "bdd",                      // Path to step definitions
    plugin = {"pretty", "html:target/cucumber-reports.html", "json:target/report.json"}
 )
