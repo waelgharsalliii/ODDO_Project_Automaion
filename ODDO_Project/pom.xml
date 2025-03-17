@@ -57,7 +57,11 @@
       <artifactId>webdrivermanager</artifactId>
       <version>5.9.3</version>
     </dependency>
-
+   <dependency>
+        <groupId>net.masterthought</groupId>
+        <artifactId>cucumber-reporting</artifactId>
+        <version>5.7.0</version>
+    </dependency>
     <!-- Commons-IO -->
     <dependency>
       <groupId>commons-io</groupId>
@@ -66,11 +70,7 @@
     </dependency>
   </dependencies>
       
-   <dependency>
-        <groupId>net.masterthought</groupId>
-        <artifactId>cucumber-reporting</artifactId>
-        <version>5.7.0</version>
-    </dependency>
+
 
   <build>
     <plugins>
